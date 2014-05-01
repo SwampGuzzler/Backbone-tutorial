@@ -6,6 +6,7 @@
    <title>Simple App with the Backbone Framework</title>
  </head>
  <body>
+   <div id="holderDiv"></div>
    <!-- Your HTML -->
    <!-- Libraries -->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
@@ -14,7 +15,15 @@
    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js" type="text/javascript"></script>  
    
    <script type="text/javascript">
-     // your JS code goes here
+     var appView = Backbone.View.Extend({
+      el: '#holderDiv',
+      initialize: function() {
+       this.render();
+      },
+      render = function() {
+       this.$el.html("Heyy there!");
+      }
+     });
    </script>
    
  </body>
